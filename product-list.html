@@ -1,0 +1,27 @@
+    <div class="container" ng-controller="StoreController">
+        <h2>Aktyvus produktas</h2>
+        <div class="row" >
+            <div class="col-md-4 thumbnail" ng-repeat="product in products" ng-if="product.enabled == 1">
+                <a href="#product/{{product.SKU}}"> <h3>{{product.title}}</h3></a>
+                <a href="#product/{{product.SKU}}" class="thumb"><img ng-src="img/{{product.img}}"></a>
+                <p>Kaina : {{product.price | currency:"":2}} €</p>
+                <p>Liko Laiko   <timer timer-start end-time=EndTime >{{minutes}} minutes, {{seconds}} sekundes.</timer>
+
+                        <!--<button ng-click="startTimer()" >Start Timer</button>-->
+                        <!--<button ng-click="stopTimer()" >Stop Timer</button></p>-->
+                <p><a class="btn btn-default" href="#product/{{product.SKU}}" role="button">Plačiau</a></p>
+            </div>
+        </div>
+        <h2>Kiti produktai</h2>
+        <div class="row" >
+            <div class="col-md-4 thumbnail" ng-repeat="product in products" ng-if="product.enabled == 0">
+                <a href="#product/{{product.SKU}}"> <h3>{{product.title}}</h3></a>
+                <a href="#product/{{product.SKU}}" class="thumb"><img ng-src="img/{{product.img}}"></a>
+                <p>Kaina : {{product.price | currency:"":2}} €</p>
+                <p><a class="btn btn-default" href="#product/{{product.SKU}}" role="button">Plačiau</a></p>
+            </div>
+        </div>
+
+    </div>
+
+
