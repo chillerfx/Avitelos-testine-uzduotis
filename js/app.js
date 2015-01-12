@@ -45,7 +45,7 @@ app.controller('StoreController', ['$scope', '$http',
                 });
         });
 
-        //$scope.EndTime =  1421113600000;
+
      }
 ]);
 
